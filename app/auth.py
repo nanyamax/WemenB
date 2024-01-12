@@ -24,7 +24,6 @@ def login():
                     "country": user.country,
                 }
                 response = jsonify(data_to_return)
-                print(response)
                 return  response
             else:
                 response = jsonify({"message": "Invalid email/password"})
