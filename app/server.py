@@ -1,4 +1,3 @@
-from flask_cors import CORS
 from mongoengine import *
 from flask import Flask
 from app.auth import auth
@@ -6,8 +5,6 @@ from app.auth import auth
 
 def create_app():
     app = Flask(__name__)
-
-    CORS(app)
 
     app.register_blueprint(auth, url_prefix='/')
 
