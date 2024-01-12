@@ -25,8 +25,7 @@ def login():
                 }
                 response = jsonify(data_to_return)
                 print(response)
-                return  response,
-
+                return  response
             else:
                 response = jsonify({"message": "Invalid email/password"})
                 return response, 401
