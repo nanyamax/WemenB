@@ -7,8 +7,8 @@ CORS(app)
 CORS(app, resources={r"/api/*": {"origins": "https://wemen-frontend-7idcrv8r3-nanyamax.vercel.app"}})
 
 
-@app.route('/', method='')
-@app.route('/index', method='GET')
+@app.route('/')
+@app.route('/index')
 def home():
     return 'This is home'
 
