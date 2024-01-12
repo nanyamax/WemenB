@@ -8,4 +8,4 @@ CORS(app, resources={r"/api/*": {"origins": "https://wemen-frontend-7idcrv8r3-na
 
 
 if __name__ == '__main__':
-    serve( host="0.0.0.0", port=3000)
+    serve(app, host="0.0.0.0", port=3000)
