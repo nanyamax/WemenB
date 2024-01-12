@@ -14,9 +14,9 @@ def login():
         email = json_data.get("email")
         password = json_data.get("password")
         user = User.objects(email=email).first()
-        print(json_data.get("email"))
         if user:
             if check_password(user.password, password):
+                print(user)
                 data_to_return = {
                     "email": user.email,
                     "firstName": user.firstName,

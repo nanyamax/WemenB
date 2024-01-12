@@ -3,7 +3,7 @@ from mongoengine import Document, StringField, DateTimeField, EmailField
 from flask_login import UserMixin
 
 
-class User(UserMixin, Document):
+class User(Document):
     firstName = StringField(max_length=20, required=True)
     lastName = StringField(max_length=20, required=True)
     email = EmailField(max_length=120, unique=True, required=True)
