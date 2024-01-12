@@ -3,7 +3,7 @@ from waitress import serve
 from flask_cors import CORS
 
 app = create_app()
-cors = CORS(app, resources={r"/login": {"origins": "https://wemen.vercel.app"}})
+cors = CORS(app)
 
 
 @app.route('/')
