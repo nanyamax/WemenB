@@ -23,8 +23,8 @@ def login():
                     "maritalStatus": user.maritalStatus,
                     "country": user.country,
                 }
-                print(data_to_return)
                 response = jsonify(data_to_return)
+                print(response)
                 return  response,
 
             else:
