@@ -10,7 +10,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['POST'])
 # @cross_origin()
-@cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
+# @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def login():
     # response = flask.jsonify({'some': 'data'})
     # response.headers.add('Access-Control-Allow-Origin', '*')
