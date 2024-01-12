@@ -13,13 +13,10 @@ def login():
         json_data = request.json
         email = json_data.get("email")
         password = json_data.get("password")
-        print(json_data.get("email"))
         user = User.objects(email=email).first()
+        print(json_data.get("email"))
         if user:
             if check_password(user.password, password):
-                # Manual session management
-                session['user_id'] = str(user.id)
-
                 data_to_return = {
                     "email": user.email,
                     "firstName": user.firstName,
