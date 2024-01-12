@@ -2,7 +2,7 @@ from flask import Blueprint, url_for, request, redirect, Response, session
 import flask
 from flask_cors import cross_origin
 from app.models import User
-from app.password import set_password, check_password
+from app.password import hash_password, check_password
 from json import dumps
 
 auth = Blueprint('auth', __name__)
@@ -81,7 +81,7 @@ def signup():
             error_message = dumps({"message": "Both password do not match"})
             return Response(error_message, 401)
         else:
-            hashed_password = set_password(password)
+            hashed_password = hash_password(password)
             result = User(email=email, firstName=first_name, lastName=last_name, password=hashed_password).save()
             if result:
                 # Manual session management
