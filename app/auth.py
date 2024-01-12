@@ -16,7 +16,6 @@ def login():
         user = User.objects(email=email).first()
         if user:
             if check_password(user.password, password):
-                print(user)
                 data_to_return = {
                     "email": user.email,
                     "firstName": user.firstName,
@@ -24,6 +23,7 @@ def login():
                     "maritalStatus": user.maritalStatus,
                     "country": user.country,
                 }
+                print(data_to_return)
                 response = jsonify(data_to_return)
                 return  response,
 
