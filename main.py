@@ -3,7 +3,7 @@ from waitress import serve
 from flask_cors import CORS
 
 app = create_app()
-cors = CORS(app)
+# cors = CORS(app)
 
 
 @app.route('/')
