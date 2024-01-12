@@ -1,5 +1,4 @@
 from flask import Blueprint, url_for, request, redirect, Response, session
-import flask
 from flask_cors import cross_origin
 from app.models import User
 from app.password import hash_password, check_password
@@ -9,11 +8,7 @@ auth = Blueprint('auth', __name__)
 
 
 @auth.route('/login', methods=['POST'])
-# @cross_origin()
-# @cross_origin(origin='localhost',headers=['Content- Type','Authorization'])
 def login():
-    # response = flask.jsonify({'some': 'data'})
-    # response.headers.add('Access-Control-Allow-Origin', '*')
     if request.method == 'POST':
         json_data = request.json
         email = json_data.get("email")

@@ -1,9 +1,7 @@
 from app.server import create_app
 from waitress import serve
-from flask_cors import CORS
 
 app = create_app()
-# cors = CORS(app)
 print("Started")
 
 @app.route('/')
