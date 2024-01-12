@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 app = create_app()
 # cors = CORS(app)
-
+print("Started")
 
 @app.route('/')
 @app.route('/index')
