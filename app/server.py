@@ -16,5 +16,4 @@ def create_app():
     connect(host=mongodb_uri)
     
     
-
     return app

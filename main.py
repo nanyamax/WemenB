@@ -1,4 +1,5 @@
 from flask_cors import CORS
+from waitress import serve
 from app.server import create_app
 
 app = create_app()
@@ -12,5 +13,5 @@ def home():
     return 'This is home'
 
 if __name__ == '__main__':
-    # serve(app)
-    app.run(debug=True)
+    serve(app)
+    
