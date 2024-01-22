@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, url_for, request, redirect, session
+from flask import Blueprint, jsonify,  request
 from flask_cors import cross_origin
 from app.models import User
 from app.password import hash_password, check_password
@@ -34,13 +34,6 @@ def login():
     else:
         response = jsonify({"message": "Invalid request"})
         return  response, 401
-
-
-@auth.route('/logout')
-def logout():
-    # Manual session management
-    session.pop('user_id', None)
-    return redirect(url_for('auth.login'))
 
 
 @auth.route('/signup', methods=['POST'])
